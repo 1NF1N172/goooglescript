@@ -17,18 +17,46 @@ A simple Python script that opens Google searches in your browser with site-spec
 - Python 3.x
 - Brave browser installed at `/usr/bin/brave-browser`
 
-## Usage
+## Installation
 
-Run the script from the command line with your search query:
+Make the script executable:
 
 ```bash
-python main.py your search query here
+chmod +x main.py
+```
+
+Optionally, you can create a symlink or add the script to your PATH to use it as a system command:
+
+```bash
+# Option 1: Create a symlink in /usr/local/bin (requires sudo)
+sudo ln -s $(pwd)/main.py /usr/local/bin/googlesearch
+
+# Option 2: Add to PATH by adding this to your ~/.bashrc or ~/.zshrc
+export PATH="$PATH:/path/to/goooglescript"
+```
+
+## Usage
+
+### As a Command
+
+If you've added it to your PATH or created a symlink:
+
+```bash
+googlesearch your search query here
+```
+
+Or run directly:
+
+```bash
+./main.py your search query here
 ```
 
 ### Example
 
 ```bash
-python main.py python list comprehension
+googlesearch python list comprehension
+# or
+./main.py python list comprehension
 ```
 
 This will open a Google search for "python list comprehension" filtered to the specified websites in your Brave browser.
